@@ -24,4 +24,8 @@ people.select(people.name, people.age + 10).show()
 
 # desc_path="file:///opt/bitnami/spark/datasets/output/people"
 # people.write.mode('overwrite').save(desc_path)
+
+desc_path="file:///opt/bitnami/spark/datasets/output/people_json"
+people.write.format('json').mode('overwrite').save(desc_path)
+
 spark.stop()
